@@ -21,11 +21,12 @@
 <script>
 import Axios from 'axios'
 import _ from 'lodash'
+import DataTable from 'vstx-data-table'
 
 export default {
   name: 'example-2-data-table',
   components: {
-    'data-table': require('vstx-data-table')
+    'data-table': DataTable
   },
   data () {
     return {
@@ -90,6 +91,9 @@ export default {
         columns: {
           isVisible: false,
           isAllowed: true
+        },
+        pagination: {
+          rowsPerPage: 25
         }
       }
     }

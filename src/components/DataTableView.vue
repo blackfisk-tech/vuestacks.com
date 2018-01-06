@@ -5,6 +5,7 @@
     h2.is-size-3 Table Configuration
     .columns
       .column
+        h4.title.is-5 Description
         aside.menu(v-for='i in configurationOutput()')
           ul.menu-list
             p.menu-label {{ i.key }}
@@ -15,59 +16,9 @@
                     span.menu-label {{ o }}
                     span  : {{ k }}
       .column
-        pre
-          code.javascript
-            | {
-            |  configuration: {
-            |    collapsePages: false,
-            |    isRanked: false,
-            |    table: {
-            |      bordered: false,
-            |      striped: true,
-            |      cellbordered: false,
-            |      overflow: false,
-            |      hoverable: true,
-            |      fullwidth: false,
-            |      filename: '',
-            |      isSelectable: false
-            |    },
-            |    settings: {
-            |      isVisible: true,
-            |      isAllowed: true,
-            |      offset: 0
-            |    },
-            |    sortIndicator: {
-            |      isVisible: true,
-            |      isAllowed: true
-            |    },
-            |    filter: {
-            |      isVisible: false,
-            |      isAllowed: true,
-            |      isEvent: false
-            |    },
-            |    columns: {
-            |      isVisible: false,
-            |      isAllowed: true
-            |    },
-            |    pagination: {
-            |      rowsPerPage: 10,
-            |      isAllowed: true,
-            |      isVisible: true
-            |    },
-            |    orderBy: {
-            |      isVisible: false,
-            |      isAllowed: true
-            |    },
-            |    totals: {
-            |      isVisible: {
-            |        all: false,
-            |        page: false,
-            |        count: false
-            |      },
-            |      isAllowed: true
-            |    }
-            |  }
-            |}
+        h4.title.is-5 Defaults
+        pre.javascript {{ configurationStruct() }}
+
 
     h2.is-size-3 Examples
     ul
@@ -92,7 +43,7 @@ export default {
   },
   methods: {
     configurationStruct () {
-      return require('../../node_modules/vstx-data-table/src/constants/defaults.js')
+      return require('../../..//vstx-data-table/src/constants/defaults.js')
     },
     configurationOutput () {
       let data = []
@@ -104,9 +55,10 @@ export default {
 
       return data
     }
+  },
+  mounted () {
+    // eslint-disable-next-line
+    hljs.highlightBlock(document.querySelector('pre'))
   }
 }
-
-// eslint-disable-next-line
-hljs.initHighlightingOnLoad()
 </script>

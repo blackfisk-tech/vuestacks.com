@@ -21,11 +21,12 @@
 import Axios from 'axios'
 import Flat from 'flat'
 import _ from 'lodash'
+import DataTable from 'vstx-data-table'
 
 export default {
   name: 'example-1-data-table',
   components: {
-    'data-table': require('vstx-data-table')
+    'data-table': DataTable
   },
   data () {
     return {
