@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "highlight.js": "^9.12.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -43,6 +44,7 @@
     "file-loader": "^1.1.4",
     "flat": "^4.0.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "highlight-loader": "^0.7.2",
     "html-webpack-plugin": "^2.30.1",
     "lodash": "^4.17.4",
     "node-notifier": "^5.1.2",
@@ -60,7 +62,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.5.8",
-    "vstx-data-table": "0.0.43",
+    "vstx-data-table": "git+https://github.com/blackfisk-tech/vstx-data-table.git",
     "vue-loader": "^13.6.2",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

@@ -1,13 +1,15 @@
 <template lang="pug">
-  .default
-    h1.is-size-4 Example #2 - <a href="https://iextrading.com/">IEX Developer Platform</a> Data-Table
-    p This data is pulled from <code>https://api.iextrading.com/1.0/stock/market/batch?symbols={{symbols}}&types=quote&range=1m&last=5</code> when the page is loaded &amp; refreshed.
+  .container
+    h1.is-size-2 Example #2 - <a href="https://iextrading.com/">IEX Developer Platform</a> Data-Table
+    p This data is pulled from <code>https://api.iextrading.com/1.0/stock/market/batch?symbols={symbols}&types=quote&range=1m&last=5</code> when the page is loaded &amp; refreshed.
     p This data-table features currency formatting &amp; hidden columns
     data-table(
       :payload='data',
       :columns='columns',
       :configuration='configuration'
     )
+      template(slot='slot-title')
+        h2.is-size-3 Data-Table Title Override using `slot-title`
       div(slot='name', slot-scope="data")
         template(v-if='data.item.logo.length')
           span {{ data.item.name }}

@@ -1,6 +1,6 @@
 <template lang="pug">
-  .default
-    h1.is-size-4 Example #1 - <a href="https://apis.guru/">APIS.guru</a> Data-Table
+  .container
+    h1.is-size-2 Example #1 - <a href="https://apis.guru/">APIS.guru</a> Data-Table
     p This data is pulled from <code>https://api.apis.guru/v2/list.json</code> when the page is loaded &amp; refreshed. Category column has a direct table filter. And the search box also filters the table. This data table is sorted first by Category and then API Name.
     p The API is fetched via Axios and a simple transformation converts the json data into an array of objects.
     p This data table configuration uses slots to replace the basic `name` column with a more complicate if-else statement using the logo and name of the api to give it a richer feel.
