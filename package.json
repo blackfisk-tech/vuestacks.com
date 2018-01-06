@@ -62,7 +62,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.5.8",
-    "vstx-data-table": "git+https://github.com/blackfisk-tech/vstx-data-table.git",
+    "vstx-data-table": "0.0.46",
     "vue-loader": "^13.6.2",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

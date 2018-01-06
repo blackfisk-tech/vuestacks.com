@@ -81,7 +81,7 @@
 
 <script>
 import _ from 'lodash'
-import ConfigurationData from '../../node_modules/vstx-data-table/docs/configuration.json'
+import ConfigurationData from '../../../vstx-data-table/docs/configuration.json'
 
 export default {
   name: 'data-table-example-views',
