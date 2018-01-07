@@ -2,7 +2,7 @@
   .container
     h1.is-size-1 Data Tables
 
-    h2.is-size-3 Table Configuration
+    h2.is-size-3 Table Configuration Payload
     .columns
       .column
         h4.title.is-5 Description
@@ -12,13 +12,27 @@
             li
               ul
                 template(v-for='(k, o) in i.data')
-                  li
+                  li(v-if="typeof k === 'object'")
+                    span.menu-label {{ o }}
+                    ul
+                      template(v-for='(a, b) in k')
+                        li
+                          span.menu-label {{ b }}
+                          span  : {{ a }}
+                  li(v-else="")
                     span.menu-label {{ o }}
                     span  : {{ k }}
       .column
         h4.title.is-5 Defaults
         pre.javascript {{ configurationStruct() }}
 
+    h2.is-size-3 Table Columns Payload
+    .columns
+      .column
+        h4.title.is-5 Description
+      .column
+        h4.title.is-5 Defaults
+        pre.javascript {{ configurationStruct() }}
 
     h2.is-size-3 Examples
     ul
@@ -57,8 +71,10 @@ export default {
     }
   },
   mounted () {
-    // eslint-disable-next-line
-    hljs.highlightBlock(document.querySelector('pre'))
+    _.forEach(document.getElementsByClassName('javascript'), obj => {
+      // eslint-disable-next-line
+      hljs.highlightBlock(obj)
+    })
   }
 }
 </script>
