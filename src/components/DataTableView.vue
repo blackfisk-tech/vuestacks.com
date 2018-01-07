@@ -23,16 +23,140 @@
                     span.menu-label {{ o }}
                     span  : {{ k }}
       .column
-        h4.title.is-5 Defaults
-        pre.javascript {{ configurationStruct() }}
+        h4.title.is-5 Configuration Payload Data-Type
+        pre.javascript
+          |{
+          |  "collapsePages": Boolean,
+          |  "isRanked": Boolean,
+          |  "table": {
+          |    "bordered": Boolean,
+          |    "striped": Boolean,
+          |    "cellbordered": Boolean,
+          |    "overflow": Boolean,
+          |    "hoverable": Boolean,
+          |    "fullwidth": Boolean,
+          |    "filename": String,
+          |    "isSelectable": Boolean
+          |  },
+          |  "settings": {
+          |    "isVisible": Boolean,
+          |    "isAllowed": Boolean,
+          |    "offset": Number
+          |  },
+          |  "sortIndicator": {
+          |    "isVisible": Boolean,
+          |    "isAllowed": Boolean
+          |  },
+          |  "filter": {
+          |    "isVisible": Boolean,
+          |    "isAllowed": Boolean,
+          |    "isEvent": Boolean
+          |  },
+          |  "columns": {
+          |    "isVisible": Boolean,
+          |    "isAllowed": Boolean
+          |  },
+          |  "pagination": {
+          |    "rowsPerPage": Number,
+          |    "isAllowed": Boolean,
+          |    "isVisible": Boolean
+          |  },
+          |  "orderBy": {
+          |    "isVisible": Boolean,
+          |    "isAllowed": Boolean
+          |  },
+          |  "totals": {
+          |    "isVisible": {
+          |      "all": Boolean,
+          |      "page": Boolean,
+          |      "count": Boolean
+          |    },
+          |    "isAllowed": Boolean
+          |  }
+          |}
 
     h2.is-size-3 Table Columns Payload
     .columns
       .column
         h4.title.is-5 Description
+        aside.menu
+          ul.menu-list
+            li
+              span.menu-label Array of Columns
+              ul
+                li
+                  p.menu-label Column
+                  ul
+                    li
+                      span.menu-label name
+                      span  : Column Title
+                    li
+                      span.menu-label format
+                      span  : Format
+                      p
+                        span.menu-label &nbsp; &nbsp; enum :
+                        em  (formatString, formatPercent, formatMoney, formatNumber)
+                    li
+                      span.menu-label field
+                      span  : Field/Key Name
+                    li
+                      span.menu-label align
+                      span  : Alignment
+                      p
+                        span.menu-label &nbsp; &nbsp; enum :
+                        em  (right, left, center)
+                    li
+                      span.menu-label position
+                      span  : Column Display Position
+                    li
+                      span.menu-label isVisible
+                      span  : Show or Hide column
+                    li
+                      span.menu-label editing
+                      ul
+                        li
+                          span.menu-label edit
+                          span  : Is Editable
+                        li
+                          span.menu-label isAllowed
+                          span  : Allow editing
+                    li
+                      span.menu-label sort
+                      ul
+                        li
+                          span.menu-label isSortable
+                          span  : Allow sorting
+                        li
+                          span.menu-label direction
+                          span  : Sort Direction
+                          p
+                            span.menu-label &nbsp; &nbsp; enum :
+                            em  (asc, desc)
+                        li
+                          span.menu-label order
+                          span  : Sort Order
+
+
       .column
-        h4.title.is-5 Defaults
-        pre.javascript {{ configurationStruct() }}
+        h4.title.is-5 Column Payload Data-Type
+        pre.javascript
+          |{
+          |   "name": String,
+          |   "format": String,
+          |   "field": String,
+          |   "align": String,
+          |   "position": Number,
+          |   "isVisible": Boolean,
+          |   "editing": {
+          |     "edit": Boolean,
+          |     "isAllowed": Boolean
+          |   },
+          |   "sort": {
+          |     "isSortable": Boolean,
+          |     "direction": String,
+          |     "order": Number
+          |   }
+          |}
 
     h2.is-size-3 Examples
     ul
@@ -57,7 +181,7 @@ export default {
   },
   methods: {
     configurationStruct () {
-      return require('../../..//vstx-data-table/src/constants/defaults.js')
+      return require('../../..//vstx-data-table/src/constants/defaults.js')['defaults']['configuration']
     },
     configurationOutput () {
       let data = []
