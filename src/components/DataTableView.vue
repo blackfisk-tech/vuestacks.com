@@ -1,8 +1,9 @@
 <template lang="pug">
   .container
-    h1.is-size-1 Data Table
+    h1.title.is-1 Data Table
 
-    h2.is-size-3 Code Snippet
+    h4.title.is-4 Code Snippet
+    hr
     section.section
       h4.title.is-5 A simple vue.js example component
       pre.html
@@ -28,7 +29,8 @@
         |}
         |&lt;/script&gt;
 
-    h2.is-size-3 Table Configuration Payload
+    h4.title.is-4 Table Configuration Payload
+    hr
     section.section
       .columns
         .column
@@ -102,7 +104,8 @@
             |  }
             |}
 
-    h2.is-size-3 Table Columns Payload
+    h4.title.is-4 Table Columns Payload
+    hr
     section.section
       .columns
         .column
@@ -184,14 +187,16 @@
             |   }
             |}
 
-    h2.is-size-3 Examples
-    ul
-      li
-        router-link(to='/data-table/example-1') Public APIs List
-        span  - A data-table example of public apis pulled from APIs.guru. This data-table example features usage of slot cell replacement and slot title replacement
-      li
-        router-link(to='/data-table/example-2') Top 100 Stock Symbols
-        span  - A data-table example of the top 100 stock symbols displayed. This data-table example features usage of current formatting, Data-Table Title Override &amp; row/page totals.
+    h4.title.is-4 Examples
+    hr
+    section.section
+      ul
+        li
+          router-link(to='/data-table/example-1') Public APIs List
+          span  - A data-table example of public apis pulled from APIs.guru. This data-table example features usage of slot cell replacement and slot title replacement
+        li
+          router-link(to='/data-table/example-2') Top 100 Stock Symbols
+          span  - A data-table example of the top 100 stock symbols displayed. This data-table example features usage of current formatting, Data-Table Title Override &amp; row/page totals.
 </template>
 
 <script>
