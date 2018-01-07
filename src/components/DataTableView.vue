@@ -2,6 +2,32 @@
   .container
     h1.is-size-1 Data Tables
 
+    h2.is-size-3 Code Snippet
+    h4.title.is-5 A simple vue.js example component
+    pre.html
+      |&lt;template&gt;
+      |   &lt;div class="container"&gt;
+      |     &lt;data-table :payload='data' /&gt;
+      |   &lt;/div&gt;
+      |&lt;/template&gt;
+      |
+      |&lt;script&gt;
+      |import DataTable from 'vstx-data-table'
+      |
+      |export default {
+      |  name: 'data-table-example',
+      |  components: {
+      |    'data-table': DataTable
+      |  },
+      |  data () {
+      |    return {
+      |      data: []
+      |    }
+      |  }
+      |}
+      |&lt;/script&gt;
+
+
     h2.is-size-3 Table Configuration Payload
     .columns
       .column
@@ -135,8 +161,6 @@
                         li
                           span.menu-label order
                           span  : Sort Order
-
-
       .column
         h4.title.is-5 Column Payload Data-Type
         pre.javascript
@@ -196,6 +220,10 @@ export default {
   },
   mounted () {
     _.forEach(document.getElementsByClassName('javascript'), obj => {
+      // eslint-disable-next-line
+      hljs.highlightBlock(obj)
+    })
+    _.forEach(document.getElementsByClassName('html'), obj => {
       // eslint-disable-next-line
       hljs.highlightBlock(obj)
     })

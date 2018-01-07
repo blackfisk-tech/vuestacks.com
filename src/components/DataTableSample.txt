@@ -1,0 +1,22 @@
+&gt;template lang="pug"&lt;
+.container
+  data-table(
+    :payload='data'
+  )
+&gt;/template&lt;
+
+&gt;script&lt;
+import DataTable from 'vstx-data-table'
+
+export default {
+  name: 'data-table-example',
+  components: {
+    'data-table': DataTable
+  },
+  data () {
+    return {
+      data: []
+    }
+  }
+}
+&gt;/script&lt;
