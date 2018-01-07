@@ -1,11 +1,14 @@
 <template lang="pug">
-  .container
-    h1.title.is-1 Data Table
-
-    h4.title.is-4 Code Snippet
-    hr
+  .default
+    section.hero.is-dark.is-bold
+      .hero-body
+        .container
+          h1.title.is-1 Data Table
+          h2.subtitle.is-5 A responsive sortable data-table designed for displaying data, editing data, and responding to users requests much the same way a typical spreadsheet has worked for years!
     section.section
-      h4.title.is-5 A simple vue.js example component
+      h4.title.is-4 Code Snippet
+      h4.subtitle.is-6 A simple vue.js example component
+      hr
       pre.html
         |&lt;template&gt;
         |   &lt;div class="container"&gt;
@@ -29,12 +32,12 @@
         |}
         |&lt;/script&gt;
 
-    h4.title.is-4 Table Configuration Payload
-    hr
     section.section
+      h4.title.is-4 Table Configuration Payload
+      hr
       .columns
         .column
-          h4.title.is-5 Description
+          h4.subtitle.is-6 Description
           aside.menu(v-for='i in configurationOutput()')
             ul.menu-list
               p.menu-label {{ i.key }}
@@ -52,7 +55,7 @@
                       span.menu-label {{ o }}
                       span  : {{ k }}
         .column
-          h4.title.is-5 Configuration Payload Data-Type
+          h4.subtitle.is-6 Configuration Payload Data-Type
           pre.javascript
             |{
             |  "collapsePages": Boolean,
@@ -104,12 +107,12 @@
             |  }
             |}
 
-    h4.title.is-4 Table Columns Payload
-    hr
     section.section
+      h4.title.is-4 Table Columns Payload
+      hr
       .columns
         .column
-          h4.title.is-5 Description
+          h4.subtitle.is-6 Description
           aside.menu
             ul.menu-list
               li
@@ -167,7 +170,7 @@
                             span.menu-label order
                             span  : Sort Order
         .column
-          h4.title.is-5 Column Payload Data-Type
+          h4.subtitle.is-6 Column Payload Data-Type
           pre.javascript
             |{
             |   "name": String,
@@ -187,9 +190,9 @@
             |   }
             |}
 
-    h4.title.is-4 Examples
-    hr
     section.section
+      h4.title.is-4 Examples
+      hr
       ul
         li
           router-link(to='/data-table/example-1') Public APIs List
