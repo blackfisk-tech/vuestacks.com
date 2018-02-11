@@ -1,6 +1,7 @@
 @charset "utf-8"
 // Typography
 @import url('https://fonts.googleapis.com/css?family=Barlow:300,400,400i,700,900')
+@font-face: {font-family: "Hack";src: url('../fonts/Hack-Regular.ttf') format('ttf');font-weight: 400;font-style: normal;}
 // Initial Variables
 @import "~bulma/sass/utilities/initial-variables"
 // Custom Colors
@@ -56,4 +57,5 @@ $text: $grey-dark
 
 .button.is-warning {color: $white;}
 
-* {font-family: 'Barlow', 'sans-serif'}
+* {font-family: 'Barlow', 'sans-serif';}
+.has-text-code * {font-family: 'Hack', 'Barlow', 'sans-serif' !important;}

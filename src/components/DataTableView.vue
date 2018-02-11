@@ -11,7 +11,7 @@
       hr
       .columns
         .column
-          pre.html
+          pre.html.has-text-code
             span {{ codeSnippets.basicExample }}
     section.section
       h4.title.is-4 Table Configuration Payload
@@ -37,7 +37,7 @@
                       span  : {{ k }}
         .column
           h4.subtitle.is-6 Configuration Payload Data-Type
-          pre.javascript
+          pre.javascript.has-text-code
             span {{ codeSnippets.configurationExample.example }}
 
     section.section
@@ -64,10 +64,10 @@
                       span  : {{ k }}
         .column
           h4.subtitle.is-6 Column Payload Data-Type
-          pre.javascript
+          pre.javascript.has-text-code
             span {{ codeSnippets.columnsExample.example }}
 
-    section.section
+    section.section#examples
       h4.title.is-4 Examples
       hr
       ul

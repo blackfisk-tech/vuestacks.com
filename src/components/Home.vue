@@ -17,7 +17,7 @@
       .columns.is-multiline
         .column
           //- Data Table Card
-          .card
+          .card.project-card
             header.card-header
               router-link.has-text-link(to="/data-table")
                 h4.title.is-4.card-header-title Data Table
@@ -34,9 +34,8 @@
               h5.subtitle.is-6
                 em A responsive Data-Table designed for reporting complete with exporting, multi-column sorting, dynamic columns, computed columns, hidden columns, and many other powerful features.
             .card-footer
-              a.card-footer-item Simple Example
-              a.card-footer-item Typical Usage
-              a.card-footer-item Complex Usage
+              router-link.has-text-link.card-footer-item(to="/data-table") Documentation
+              router-link.has-text-link.card-footer-item(to="/data-table#examples") Examples
         .column
     section.section
       h3.title.is-3 Development Projects
@@ -67,3 +66,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .project-card {
+    max-width: 30rem;
+  }
+</style>
