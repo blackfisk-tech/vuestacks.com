@@ -25,7 +25,7 @@
               router-link.has-text-link(to="/data-table")
                 figure.image
                   img.is-16by9(
-                    src="../assets/example-table-1.jpg"
+                    src="../assets/example-table-1.png"
                     alt="Data Table"
                   )
             .card-content

@@ -2,9 +2,8 @@
   .default
     section.hero.is-light
       .hero-body
-        .container
-          h1.title.is-1 Data Table
-          h2.subtitle.is-5 A responsive sortable data-table designed for displaying data, editing data, and responding to users requests much the same way a typical spreadsheet has worked for years!
+        h1.title.is-1 Data Table
+        h2.subtitle.is-5 A responsive sortable data-table designed for displaying data, editing data, and responding to users requests much the same way a typical spreadsheet has worked for years!
     section.section
       h4.title.is-4 Code Snippet
       h4.subtitle.is-6 A simple vue.js example component
