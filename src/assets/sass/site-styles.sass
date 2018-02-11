@@ -1,0 +1,59 @@
+@charset "utf-8"
+// Typography
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,400i,700,900')
+// Initial Variables
+@import "~bulma/sass/utilities/initial-variables"
+// Custom Colors
+$orange: #FF6700
+$dark-blue: #0b162d
+$middle-blue: #3c9bd1
+$light-grey: #f9f9f9
+$light-blue: #F8F8FF
+$yellow: #FFF056
+$green: #339951
+$light-green: #42BD40
+$highlight-yellow: #ffffe0
+// Primary Colors
+$cyan: $middle-blue
+$primary: $middle-blue
+$link: $middle-blue
+$info: $cyan
+$success: $light-green
+$warning: $orange
+$danger: $red
+$dark: $grey-darker
+$text: $grey-dark
+// Elements
+// @import "./notification"
+// @import "./button"
+// Components
+// @import "./table"
+// @import "./box"
+// Bulma
+@import "~bulma/bulma"
+// Bulma CheckRadio Extension
+// @import "~bulma-checkradio"
+// Style Propdoc Using Bulma as Base
+.propdoc {@extend .box;font-size: 1rem;}
+.proprow {@extend .columns;font-size: 1rem;}
+.proprow.labels {@extend .is-small;color: grey;text-transform:uppercase;}
+.propcol {@extend .column;font-size: 1rem; font-weight: bold;}
+.propdoc .title {font-weight: bold;}
+// Custom is-* Colors
+.is-orange {color: $orange !important}
+.is-light-green {color: $light-green !important}
+.is-dark-blue {color: $dark-blue}
+.is-middle-blue {color: #19568f}
+.is-grey {color: $grey-light}
+.has-text-dark-blue {color: $dark-blue}
+.has-text-middle-blue {color: #19568f}
+.has-text-grey {color: $grey-light}
+// Layout
+// .section {padding: 0rem 1.5rem}
+
+
+.icon-edit {font-size: 0.85rem}
+
+.button.is-warning {color: $white;}
+
+* {font-family: 'Barlow', 'sans-serif'}

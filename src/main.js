@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import '../node_modules/bulma/bulma.sass'
+// import '../node_modules/bulma/bulma.sass'
+import './assets/sass/site-styles.sass'
 
 Vue.config.productionTip = false
 

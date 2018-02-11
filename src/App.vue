@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     header.header
-      nav.navbar.is-black(role="navigation", aria-label="main navigation")
+      nav.navbar.is-primary(role="navigation", aria-label="main navigation")
         .navbar-brand
           router-link.navbar-item(to="/")
             span VueStacks.com
