@@ -23,7 +23,7 @@
               router-link.has-text-link(to='/data-table/example-1')
                 h4.title.is-4.card-header-title Example: Public APIs List
             .card-image
-              router-link.has-text-link(to="/data-table")
+              router-link.has-text-link(to="/data-table/example-1")
                 figure.image
                   img.is-16by9(
                     title="Example: List of Public APIs"
@@ -42,7 +42,7 @@
               router-link.has-text-link(to='/data-table/example-2')
                 h4.title.is-4.card-header-title Example: Top 100 Stock Symbols
             .card-image
-              router-link.has-text-link(to="/data-table")
+              router-link.has-text-link(to="/data-table/example-2")
                 figure.image
                   img.is-16by9(
                     title="Example: Top 100 Stock Symbols"
