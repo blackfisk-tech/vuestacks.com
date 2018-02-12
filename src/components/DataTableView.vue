@@ -12,6 +12,48 @@
         .column
           pre.html.has-text-code
             span {{ codeSnippets.basicExample }}
+    section.section#examples
+      h4.title.is-4 Examples
+      hr
+      .columns.is-multiline
+        .column.is-narrow
+          //- Public APIs Card
+          .card.project-card
+            header.card-header
+              router-link.has-text-link(to='/data-table/example-1')
+                h4.title.is-4.card-header-title Example: Public APIs List
+            .card-image
+              router-link.has-text-link(to="/data-table")
+                figure.image
+                  img.is-16by9(
+                    title="Example: List of Public APIs"
+                    src="../assets/api-guru-example-1.png"
+                    alt="Example: List of Public APIs"
+                  )
+            .card-content
+              router-link.has-text-link(to='/data-table/example-1')
+                h4.title.is-4 Public APIs
+              h5.subtitle.is-6
+                em An example usage of the data table to show a list of public apis pulled from APIs.guru. This example features usage of slot cell replacement and slot title replacement to show Logos next to API Name and to populate the title, respectively.
+        .column.is-narrow
+          //- Public APIs Card
+          .card.project-card
+            header.card-header
+              router-link.has-text-link(to='/data-table/example-2')
+                h4.title.is-4.card-header-title Example: Top 100 Stock Symbols
+            .card-image
+              router-link.has-text-link(to="/data-table")
+                figure.image
+                  img.is-16by9(
+                    title="Example: Top 100 Stock Symbols"
+                    src="../assets/top-stocks-example-1.png"
+                    alt="Example: Top 100 Stock Symbols"
+                  )
+            .card-content
+              router-link.has-text-link(to='/data-table/example-2')
+                h4.title.is-4 Top 100 Stocks
+              h5.subtitle.is-6
+                em An example usage of the data table to show the Top 100 Stock symbols as pulled from api.iextrading.com. This example features usage of Currency formatting, a Title slot, &amp; Row/Page totals.
     section.section
       h4.title.is-4 Table Configuration Payload
       hr
@@ -65,17 +107,6 @@
           h4.subtitle.is-6 Column Payload Data-Type
           pre.javascript.has-text-code
             span {{ codeSnippets.columnsExample.example }}
-
-    section.section#examples
-      h4.title.is-4 Examples
-      hr
-      ul
-        li
-          router-link(to='/data-table/example-1') Public APIs List
-          span  - A data-table example of public apis pulled from APIs.guru. This data-table example features usage of slot cell replacement and slot title replacement
-        li
-          router-link(to='/data-table/example-2') Top 100 Stock Symbols
-          span  - A data-table example of the top 100 stock symbols displayed. This data-table example features usage of current formatting, Data-Table Title Override &amp; row/page totals.
 </template>
 
 <script>

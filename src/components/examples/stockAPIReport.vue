@@ -39,7 +39,8 @@ export default {
           isVisible: true,
           sort: {
             isSortable: true,
-            direction: 'asc'
+            direction: 'asc',
+            order: 1
           }
         },
         {
@@ -61,16 +62,18 @@ export default {
         {
           name: 'Price',
           field: 'latestPrice',
-          formatData: 'formatMoney',
+          format: 'formatMoney',
           isVisible: true,
           sort: {
-            isSortable: false
+            isSortable: true,
+            direction: 'desc',
+            order: 0
           }
         },
         {
           name: 'Market Cap',
           field: 'marketCap',
-          formatData: 'formatMoney',
+          format: 'formatMoney',
           isVisible: true,
           sort: {
             isSortable: false

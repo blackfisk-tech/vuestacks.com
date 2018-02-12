@@ -13,10 +13,11 @@
           p The API is fetched via Axios and a simple transformation converts the json data into an array of objects.
           p This data table configuration uses slots to replace the basic `name` column with a more complicate if-else statement using the logo and name of the api to give it a richer feel.
       div(slot='name', slot-scope="data")
-        template(v-if='data.item.logo.length')
-          span {{ data.item.name }}
-          figure.image.is-32x32
-            img(:src='data.item.logo')
+        template(v-if="typeof data.item.logo !== 'undefined' && data.item.logo.length")
+          span.icon.is-normal
+            figure.image
+              img(:src='data.item.logo')
+          span &nbsp;&nbsp;{{ data.item.name }}
         span(v-else='') {{ data.item.name }}
 </template>
 
@@ -45,12 +46,14 @@ export default {
           }
         },
         {
-          name: 'Category',
-          field: 'category',
+          name: 'Updated',
+          field: 'updated',
           isVisible: true,
+          format: 'formatDate',
+          formatArgs: ['YYYY-MM-DD', '-08:00'],
           sort: {
             isSortable: true,
-            direction: 'asc',
+            direction: 'DESC',
             order: 0
           }
         },
@@ -78,6 +81,9 @@ export default {
         columns: {
           isVisible: false,
           isAllowed: true
+        },
+        pagination: {
+          rowsPerPage: 50
         }
       }
     }
@@ -101,7 +107,7 @@ export default {
         this.data.push({
           name: thisIsFlat[`versions.${thisIsFlat['preferred']}.info.title`],
           logo: thisIsFlat[`versions.${thisIsFlat['preferred']}.info.x-logo.url`],
-          category: thisIsFlat[`versions.${thisIsFlat['preferred']}.info.x-apisguru-categories.0`],
+          updated: thisIsFlat[`versions.${thisIsFlat['preferred']}.updated`],
           description: thisIsFlat[`versions.${thisIsFlat['preferred']}.info.description`]
         })
       })
