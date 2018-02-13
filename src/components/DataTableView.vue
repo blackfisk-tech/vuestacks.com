@@ -154,3 +154,10 @@ export default {
   }
 }
 </script>
+
+
+<style>
+.project-card {
+  max-width: 30rem;
+}
+</style>
