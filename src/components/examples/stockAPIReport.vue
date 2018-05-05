@@ -4,6 +4,7 @@
       :payload='data',
       :columns='columns',
       :configuration='configuration'
+      :isLoading="isLoading"
     )
       template(slot='slot-title')
         div(style="margin-bottom: 0.75rem;")
@@ -107,6 +108,7 @@ export default {
   },
   methods: {
     getData (url, method = 'get', fomatter = this.formatData) {
+      this.isLoading = true
       Axios(
         {
           method: method,
@@ -116,7 +118,7 @@ export default {
         .then((res) => fomatter(res))
     },
     formatData (res) {
-      console.log(res.data['AAPL']['quote'])
+      this.isLoading = false
       return _.forEach(res.data, (obj, key) => {
         this.data.push(obj['quote'])
       })

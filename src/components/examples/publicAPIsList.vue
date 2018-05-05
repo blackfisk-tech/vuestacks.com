@@ -4,6 +4,7 @@
       :payload='data',
       :columns='columns',
       :configuration='configuration'
+      :isLoading="isLoading"
     )
       template(slot="slot-title")
         div(style="margin-bottom:0.5rem;")
@@ -34,6 +35,7 @@ export default {
   },
   data () {
     return {
+      isLoading: false,
       data: [],
       columns: [
         {
@@ -67,6 +69,7 @@ export default {
         }
       ],
       configuration: {
+        offsetTop: 0,
         table: {
           bordered: true,
           striped: true,
@@ -93,6 +96,7 @@ export default {
   },
   methods: {
     getData (url, method = 'get', fomatter = this.formatData) {
+      this.isLoading = true
       Axios(
         {
           method: method,
@@ -102,6 +106,7 @@ export default {
         .then((res) => fomatter(res))
     },
     formatData (res) {
+      this.isLoading = false
       return _.forEach(res.data, (obj, key) => {
         let thisIsFlat = Flat(obj)
         this.data.push({

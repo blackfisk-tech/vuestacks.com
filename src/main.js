@@ -17,6 +17,8 @@ import faList from '@fortawesome/fontawesome-free-solid/faList'
 import faWrench from '@fortawesome/fontawesome-free-solid/faWrench'
 import faAngleLeft from '@fortawesome/fontawesome-free-solid/faAngleLeft'
 import faAngleRight from '@fortawesome/fontawesome-free-solid/faAngleRight'
+import AsyncComputed from 'vue-async-computed'
+import VueWorker from 'vue-worker'
 
 fontawesome.library.add(faGithub)
 fontawesome.library.add(faUser)
@@ -31,7 +33,8 @@ fontawesome.library.add(faAngleLeft)
 fontawesome.library.add(faAngleRight)
 
 Vue.config.productionTip = false
-
+Vue.use(AsyncComputed)
+Vue.use(VueWorker)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
